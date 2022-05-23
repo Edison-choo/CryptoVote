@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logoOrange.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>React App</title>
+
+    <!-- Favicons -->
+    <link href="%PUBLIC_URL%/img/bvs/logoOrange.png" rel="icon">
+    <link href="%PUBLIC_URL%/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="%PUBLIC_URL%/vendor/aos/aos.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="%PUBLIC_URL%/css/style.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/css/myStyle.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="https://stg-id.singpass.gov.sg/static/ndi_embedded_auth.js"></script>
+
+    <!-- <script>
+      var authParamsSupplier = async() => {
+    return {state: "dummySessionState", nonce: "dummySessionNonce"};
+
+  };
+
+  const onError = (errorId, message) => {
+    console.log(`onError.errorId:${errorId} message:${message}`);
+  };
+
+  const initAuthSessionResponse = window.NodeIterator.initAuthSession(
+    'ndi-qr',
+    {
+      clientId: '',
+      redirectUri: '',
+      scope: 'openId',
+      responseType: 'code'
+    },
+    authParamsSupplier,
+    onError
+  );
+
+  console.log('initAuthSession: ', initAuthSessionResponse);
+
+    </script> -->
+
+<script>
+  async function init() {
+    const authParamsSupplier = async () => {
+      // Replace the below with an `await`ed call to initiate an auth session on your backend
+      // which will generate state+nonce values, e.g
+      return { state: "dummySessionState", nonce: "dummySessionNonce" };
+    };
+
+    const onError = (errorId, message) => {
+      console.log(`onError. errorId:${errorId} message:${message}`);
+    };
+
+    const initAuthSessionResponse = window.NDI.initAuthSession(
+      'ndi-qr',
+      {
+        clientId: 'T5sM5a53Yaw3URyDEv2y9129CbElCN2F', // Replace with your client ID
+        redirectUri: 'https://partner.gov.sg',        // Replace with a registered redirect URI
+        scope: 'openid',
+        responseType: 'code'
+      },
+      authParamsSupplier,
+      onError
+    );
+
+    console.log('initAuthSession: ', initAuthSessionResponse);
+  }
+
+</script>
+    
+    <div id="root"></div>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="%PUBLIC_URL%/vendor/aos/aos.js"></script>
+    <script src="%PUBLIC_URL%/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <script src="%PUBLIC_URL%/js/main.js"></script>
+    <script src="%PUBLIC_URL%/js/myMain.js"></script>
+  </body>
+</html>
