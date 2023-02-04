@@ -84,6 +84,7 @@ const FileUpload = () => {
           } else {
             console.log("error");
           }
+          window.localStorage.removeItem("photos");
           window.location.href = "/PublicCreateSuccess";
         })
 
